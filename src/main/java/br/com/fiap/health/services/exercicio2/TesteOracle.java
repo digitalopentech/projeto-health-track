@@ -3,7 +3,6 @@ package br.com.fiap.health.services.exercicio2;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
 
 public class TesteOracle {
@@ -16,23 +15,7 @@ public class TesteOracle {
 		 * O driver JDBC do Oracle está disponível no seguinte endereço:
 		 * http://www.oracle.com/technetwork/database/features/jdbc/index-091264.html
 		 */
-
-		// Configuração dos parâmetros de conexão
-		String server = "localhost";
-		String port = "1521"; // Porta TCP padrão do Oracle
-		String database = "test";
-
-		// Configuração dos parâmetros de autenticação
-		String user = "root";
-		String passwd = "";
-
 		try {
-			//String url = "jdbc:oracle:thin:@" + server + ":" + port + ":" + database;
-
-			// Abre-se a conexão com o Banco de Dados
-			//Connection con = DriverManager.getConnection(url, user, passwd);
-
-					
 			Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "c##admin", "admin");
 
             if (conn != null) {
