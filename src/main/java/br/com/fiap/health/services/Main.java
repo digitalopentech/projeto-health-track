@@ -1,18 +1,20 @@
 package br.com.fiap.health.services;
 
-import java.util.Date;
-
 public class Main {
     public static void main(String args[]) {
         System.out.println("Iniciando o App Health Track");
         
         Usuario usuario = new Usuario();
         
-        System.out.println(usuario.getPeso());
+//        System.out.println(usuario.getPeso());
+//        
+//        Usuario usuario2 = new Usuario(new Date(), 90, 180);
+//        
+//        System.out.println(usuario2.getPeso());
         
-        Usuario usuario2 = new Usuario(new Date(), 90, 180);
+        Atividade atividade = new Atividade(TipoAtividade.SONO);
         
-        System.out.println(usuario2.getPeso());
+        System.out.println("Tipo da Atividade " + atividade.getAtividade());
         
         //############### TREINO ################
         Treino treino = new Treino();

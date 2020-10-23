@@ -42,9 +42,9 @@ public class Configuracao {
      */
     private void parseIncomingData(String data) {
         deviceUser.addLogin("admin", "password");
-        deviceUser.addBirthday(new Date());
-        deviceUser.addGender("male");
-        deviceUser.addHeightWeight(182, 79);
+//        deviceUser.addBirthday(new Date());
+//        deviceUser.addGender("male");
+//        deviceUser.addHeightWeight(182, 79);
     }
 
     /**
