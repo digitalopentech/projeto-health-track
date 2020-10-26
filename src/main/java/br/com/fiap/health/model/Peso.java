@@ -9,10 +9,13 @@ import java.util.Date;
  *
  */
 public class Peso {
-	private int peso;
-	private int altura;
+	private double peso;
+	private double altura;
 	private Usuario usuario;
 	private Date saveTime;
+
+	public Peso() {
+	}
 
 	public Peso(double bpm, double minima, Usuario usuario) {
 		this.peso = peso;
@@ -21,19 +24,19 @@ public class Peso {
 		this.saveTime = new Date();
 	}
 
-	public int getPeso() {
+	public double getPeso() {
 		return peso;
 	}
 
-	public void setPeso(int peso) {
+	public void setPeso(double peso) {
 		this.peso = peso;
 	}
 
-	public int getAltura() {
+	public double getAltura() {
 		return altura;
 	}
 
-	public void setAltura(int altura) {
+	public void setAltura(double altura) {
 		this.altura = altura;
 	}
 

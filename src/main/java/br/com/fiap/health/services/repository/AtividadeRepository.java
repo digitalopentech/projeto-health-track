@@ -1,4 +1,4 @@
-package br.com.fiap.health.services.infra;
+package br.com.fiap.health.services.repository;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.fiap.health.model.Usuario;
+import br.com.fiap.health.services.infra.DbConnection;
 
 public class AtividadeRepository {
 

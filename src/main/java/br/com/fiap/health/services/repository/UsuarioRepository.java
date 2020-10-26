@@ -1,4 +1,4 @@
-package br.com.fiap.health.services.infra;
+package br.com.fiap.health.services.repository;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,9 +8,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.fiap.health.model.Usuario;
+import br.com.fiap.health.services.infra.DbConnection;
 
-public class PressaoArterialRepository {
+public class UsuarioRepository {
 
+	/**
+	 * 
+	 * @return
+	 */
 	public List<Usuario> getAll() {
 		String sql = "SELECT * FROM usuario";
 		List<Usuario> usuarioList = new ArrayList<>();
@@ -31,9 +36,11 @@ public class PressaoArterialRepository {
 		return usuarioList;
 	}
 
+	/**
+	 * 
+	 */
 	public void insert() {
-		String sql = "INSERT INTO pressao_arterial(id_pressao_arterial, usuario_id, valor_maximo, valor_minimo,\r\n" + 
-				"data_hora) VALUES (peso_seq.NEXTVAL, 29, 12, 8, current_timestamp)";
+		String sql = "INSERT INTO usuario (id, genero, idade, nome, data_hora) VALUES (usuario_seq.NEXTVAL, 'Masculino', 38, 'Maria Clara Mendes', current_timestamp)";
 		try (Connection conn = DbConnection.getConnection(); 
 			PreparedStatement stmt = conn.prepareStatement(sql)) {
 			stmt.executeUpdate();

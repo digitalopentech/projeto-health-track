@@ -1,4 +1,4 @@
-package br.com.fiap.health.services.infra;
+package br.com.fiap.health.services.repository;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,34 +7,34 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.fiap.health.model.Usuario;
+import br.com.fiap.health.model.Peso;
+import br.com.fiap.health.services.infra.DbConnection;
 
-public class AlimentoIngeridoRepository {
+public class PesoRepository {
 
-	public List<Usuario> getAll() {
-		String sql = "SELECT * FROM usuario";
-		List<Usuario> usuarioList = new ArrayList<>();
+	public List<Peso> getAll() {
+		String sql = "SELECT * FROM peso";
+		List<Peso> PesoList = new ArrayList<>();
 		try (Connection conn = DbConnection.getConnection();
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			ResultSet resultSet = stmt.executeQuery()) {
 			while (resultSet.next()) {
-				Usuario usuario = new Usuario();
-				usuario.setNome(resultSet.getString("nome"));
-				usuario.setGenero(resultSet.getString("genero"));
-				usuario.setNascimento(resultSet.getDate("data_hora"));
-				usuarioList.add(usuario);
+				Peso Peso = new Peso();
+				Peso.setPeso(resultSet.getDouble("peso"));
+				Peso.setAltura(resultSet.getDouble("altura"));
+				Peso.setSaveTime(resultSet.getDate("data_hora"));
+				PesoList.add(Peso);
 			}
 			conn.close();
 		} catch (SQLException throwables) {
 			throwables.printStackTrace();
 		}
-		return usuarioList;
+		return PesoList;
 	}
 
 	public void insert() {
-		String sql = "INSERT INTO alimento_ingerido(id_alimento, usuario_id, id_tipo_alimento ,\r\n" + 
-				"porcao_ingerida, data_hora) VALUES (alimento_ingerido_seq.NEXTVAL, 29, 1, 0.150,\r\n" + 
-				"current_timestamp)";
+		String sql = "INSERT INTO peso(id_peso, usuario_id, peso, altura, data_hora) VALUES\r\n" + 
+				"(peso_seq.NEXTVAL, 29, 90.0, 1.90, current_timestamp)";
 		try (Connection conn = DbConnection.getConnection(); 
 			PreparedStatement stmt = conn.prepareStatement(sql)) {
 			stmt.executeUpdate();
