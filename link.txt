@@ -1,5 +1,7 @@
 https://fast-lane.webex.com/fast-lane-pt-br/j.php?MTID=mf782015004eff3220c28f58bed10ed34
 
+https://aws-tc-largeobjects.s3.amazonaws.com/AWS-100-DEV/v3.3/fullCodeForAllLabs.html
+
 Caro Participante,
 
 Agradeço o seu interesse em nossos serviços de treinamento.;
